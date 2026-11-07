@@ -17,7 +17,16 @@ struct ContentView: View {
         NavigationStack {
             Group {
                 if (tasks.isEmpty) {
-                    ContentUnavailableView("Add Task", systemImage: "tray.fill", description: Text("Tap '+' to add your first to-do."))
+                    ContentUnavailableView {
+                        Label("No Tasks", systemImage: "tray.fill")
+                    } description: {
+                        Text("Tap below to capture your first task.")
+                    } actions: {
+                        Button("Add Task") {
+                            viewModel.showSheet.toggle()
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
                 } else {
                     List {
                         ForEach(tasks) { task in
