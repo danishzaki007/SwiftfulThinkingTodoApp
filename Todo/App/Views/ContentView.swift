@@ -24,16 +24,17 @@ struct ContentView: View {
                             HStack(spacing: 8) {
                                 Image(systemName: task.isComplete ? "checkmark.circle.fill" : "circle")
                                     .font(.system(size: 24))
-                                
+                                                            
                                 Text(task.title)
                                     .font(.headline)
-                            }
+                        }
                             .sensoryFeedback(.pathComplete, trigger: task.isComplete)
                             .onTapGesture {
                                 withAnimation(.bouncy) {
                                     task.isComplete.toggle()
                                 }
                             }
+                            .strikethrough(task.isComplete)
                         }
                         .onDelete { offsets in
                             viewModel.deleteTask(at: offsets, context: modelContext, from: tasks)
