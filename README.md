@@ -24,3 +24,15 @@ Inspired by clean coding practices and modern iOS development patterns (similar 
 - **Persistence:** SwiftData (`@Model`, `@Query`, `ModelContext`)
 - **Architecture:** MVVM (`@Observable` ViewModels or `ObservableObject`)
 - **Platform:** iOS 17.0+
+
+Todo/
+├── TodoApp.swift             # App entry point & SwiftData container setup
+├── Models/
+│   └── Task.swift            # SwiftData @Model schema definition
+├── ViewModels/
+│   └── TaskViewModel.swift   # Business logic & state management
+├── Views/
+│   ├── ContentView.swift     # Main list screen
+│   └── ShowSheetView.swift   # Add/Edit task sheet
+└── Resources/
+    └── Assets.xcassets       # Images, colors, and app icons
